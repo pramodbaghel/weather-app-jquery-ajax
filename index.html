@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyPulse — Weather App</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="mesh"></div>
+    <div class="orbs" id="orbs"></div>
+
+    <div class="page">
+
+        <!-- Brand -->
+        <header class="brand">
+            <div class="brand-logo">
+                🌐 SkyPulse <span class="pulse-dot"></span>
+            </div>
+            <p class="brand-sub">Real-time weather at your fingertips</p>
+        </header>
+
+        <!-- Search -->
+        <div class="search-card">
+            <div class="search-row">
+                <input type="text" id="city-input" placeholder="Enter city name… e.g. London" autocomplete="off" />
+                <button id="search-btn">🔍 Search</button>
+            </div>
+            <div id="recent-section" style="display:none">
+                <p class="recent-label">🕐 Recent Searches</p>
+                <div id="recent-list"></div>
+            </div>
+        </div>
+
+        <!-- Spinner -->
+        <div id="spinner">
+            <div class="spin-wrap">
+                <div class="spin-ring"></div>
+                <div class="spin-ring"></div>
+            </div>
+            <span class="spin-label">Fetching weather data…</span>
+        </div>
+
+        <!-- Error -->
+        <div id="error-box">
+            <span class="err-icon">⚠️</span>
+            <span id="error-msg">Something went wrong.</span>
+        </div>
+
+        <!-- Weather -->
+        <div id="weather-card">
+            <div class="wc-top">
+                <div>
+                    <div class="wc-city" id="w-city">—</div>
+                    <div class="wc-date" id="w-date"></div>
+                </div>
+                <img id="w-api-icon" class="wc-api-icon" src="" alt="" />
+            </div>
+
+            <div class="wc-main">
+                <div class="wc-big-icon" id="w-emoji">☀️</div>
+                <div class="wc-temp-block">
+                    <div class="wc-temp"><span id="w-temp">--</span><span class="wc-unit">°C</span></div>
+                    <div class="wc-desc" id="w-desc">—</div>
+                    <div class="wc-feels">Feels like <span id="w-feels">--</span>°C</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-icon">💧</span>
+                    <div class="stat-label">Humidity</div>
+                    <div class="stat-val"><span id="w-humidity">--</span>%</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">💨</span>
+                    <div class="stat-label">Wind</div>
+                    <div class="stat-val"><span id="w-wind">--</span> km/h</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">👁️</span>
+                    <div class="stat-label">Visibility</div>
+                    <div class="stat-val"><span id="w-vis">--</span> km</div>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🌡️</span>
+                    <div class="stat-label">Pressure</div>
+                    <div class="stat-val"><span id="w-pressure">--</span> hPa</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outfit -->
+        <div id="outfit-card">
+            <div class="outfit-heading">👗 What to Wear Today?</div>
+            <div class="outfit-row">
+                <span class="outfit-emoji-big" id="outfit-emoji">👕</span>
+                <div class="outfit-body" id="outfit-text">Loading…</div>
+            </div>
+        </div>
+
+        <footer>Powered by OpenWeatherMap &nbsp;·&nbsp; SkyPulse © 2025</footer>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
